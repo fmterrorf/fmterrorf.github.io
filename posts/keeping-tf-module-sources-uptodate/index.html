@@ -9,14 +9,14 @@
 	gcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in you TF you might have the following:
 module &#34;blahblah&#34; { source = &#34;git::https://example.com/monorepo.git?ref=gcs-v1.0.1&#34; } You can run drdrei path/to/module and it will tell you to use use gcs-1.">
 <meta name=author content>
-<link rel=canonical href=/posts/keeping-tf-module-sources-uptodate/>
+<link rel=canonical href=https://fmterrorf.github.io/posts/keeping-tf-module-sources-uptodate/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
 <script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=apple-touch-icon href=apple-touch-icon.png>
-<link rel=mask-icon href=safari-pinned-tab.svg>
+<link rel=icon href=https://fmterrorf.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://fmterrorf.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://fmterrorf.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://fmterrorf.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://fmterrorf.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.87.0">
@@ -25,7 +25,7 @@ module &#34;blahblah&#34; { source = &#34;git::https://example.com/monorepo.git?
 	gcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in you TF you might have the following:
 module &#34;blahblah&#34; { source = &#34;git::https://example.com/monorepo.git?ref=gcs-v1.0.1&#34; } You can run drdrei path/to/module and it will tell you to use use gcs-1.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="/posts/keeping-tf-module-sources-uptodate/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://fmterrorf.github.io/posts/keeping-tf-module-sources-uptodate/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-08-28T13:41:25-06:00">
 <meta property="article:modified_time" content="2021-08-28T13:41:25-06:00">
 <meta name=twitter:card content="summary">
@@ -33,8 +33,8 @@ module &#34;blahblah&#34; { source = &#34;git::https://example.com/monorepo.git?
 <meta name=twitter:description content="Few weeks ago, I decided to write a tool called drdrei that will automatically check if the module&rsquo;s source attribute isn&rsquo;t using the latest version. This tool only works if you have a mono repo that uses tag name format such as <feature_name>-<semver> for example:
 	gcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in you TF you might have the following:
 module &#34;blahblah&#34; { source = &#34;git::https://example.com/monorepo.git?ref=gcs-v1.0.1&#34; } You can run drdrei path/to/module and it will tell you to use use gcs-1.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"/posts/"},{"@type":"ListItem","position":3,"name":"Keeping Terraform module sources up-to-date","item":"/posts/keeping-tf-module-sources-uptodate/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Keeping Terraform module sources up-to-date","name":"Keeping Terraform module sources up-to-date","description":"Few weeks ago, I decided to write a tool called drdrei that will automatically check if the module\u0026rsquo;s source attribute isn\u0026rsquo;t using the latest version. This tool only works if you have a mono repo that uses tag name format such as \u0026lt;feature_name\u0026gt;-\u0026lt;semver\u0026gt; for example:\n\tgcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in you TF you might have the following:\nmodule \u0026#34;blahblah\u0026#34; { source = \u0026#34;git::https://example.com/monorepo.git?ref=gcs-v1.0.1\u0026#34; } You can run drdrei path/to/module and it will tell you to use use gcs-1.","keywords":[],"articleBody":"Few weeks ago, I decided to write a tool called drdrei that will automatically check if the module’s source attribute isn’t using the latest version. This tool only works if you have a mono repo that uses tag name format such as - for example:\n\tgcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in you TF you might have the following:\nmodule \"blahblah\" { source = \"git::https://example.com/monorepo.git?ref=gcs-v1.0.1\" } You can run drdrei path/to/module and it will tell you to use use gcs-1.0.3\nHow it works Building drdrei is pretty simple since all i have to do use existing go libraries \u0026 git features. Folks at Terraform are generous enough to make this helper tool called terraform-config-inspect that i used to get high-level metadata such as the source attribute) that i used to get high-level metadata such as the source attribute from the module. I then used regex to parse out the feature name \u0026 semver info from the source.\nOnce i have the sources, i can git remote-ls to fetch the list of tags from the source git repo. I then sort the tags using Masterminds/semver \u0026 only fetch the latest one. Then i compare if my local copy is using the the latest version \u0026 show output to the console if it isn’t.\nConclusion I had fun building drdrei. It was simple, didn’t take too much time to build \u0026 does the job. One of my coworkers suggested to put in our pre-commit hooks \u0026 you can use the script below.\nmodule_dirs=$(git diff --cached --name-only --diff-filter=d \"*.tf\" \\ \t| xargs -n1 dirname \\ \t| tr '\\n' ' ') [ -n \"${module_dirs}\" ]\\ \t\u0026\u0026 echo \"Auditing outdated module sources\"\\ \t\u0026\u0026 drdrei $module_dirs ","wordCount":"278","inLanguage":"en","datePublished":"2021-08-28T13:41:25-06:00","dateModified":"2021-08-28T13:41:25-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/keeping-tf-module-sources-uptodate/"},"publisher":{"@type":"Organization","name":"Daven's blog stuff","logo":{"@type":"ImageObject","url":"favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://fmterrorf.github.io/posts/"},{"@type":"ListItem","position":3,"name":"Keeping Terraform module sources up-to-date","item":"https://fmterrorf.github.io/posts/keeping-tf-module-sources-uptodate/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Keeping Terraform module sources up-to-date","name":"Keeping Terraform module sources up-to-date","description":"Few weeks ago, I decided to write a tool called drdrei that will automatically check if the module\u0026rsquo;s source attribute isn\u0026rsquo;t using the latest version. This tool only works if you have a mono repo that uses tag name format such as \u0026lt;feature_name\u0026gt;-\u0026lt;semver\u0026gt; for example:\n\tgcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in you TF you might have the following:\nmodule \u0026#34;blahblah\u0026#34; { source = \u0026#34;git::https://example.com/monorepo.git?ref=gcs-v1.0.1\u0026#34; } You can run drdrei path/to/module and it will tell you to use use gcs-1.","keywords":[],"articleBody":"Few weeks ago, I decided to write a tool called drdrei that will automatically check if the module’s source attribute isn’t using the latest version. This tool only works if you have a mono repo that uses tag name format such as - for example:\n\tgcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in you TF you might have the following:\nmodule \"blahblah\" { source = \"git::https://example.com/monorepo.git?ref=gcs-v1.0.1\" } You can run drdrei path/to/module and it will tell you to use use gcs-1.0.3\nHow it works Building drdrei is pretty simple since all i have to do use existing go libraries \u0026 git features. Folks at Terraform are generous enough to make this helper tool called terraform-config-inspect that i used to get high-level metadata such as the source attribute) that i used to get high-level metadata such as the source attribute from the module. I then used regex to parse out the feature name \u0026 semver info from the source.\nOnce i have the sources, i can git remote-ls to fetch the list of tags from the source git repo. I then sort the tags using Masterminds/semver \u0026 only fetch the latest one. Then i compare if my local copy is using the the latest version \u0026 show output to the console if it isn’t.\nConclusion I had fun building drdrei. It was simple, didn’t take too much time to build \u0026 does the job. One of my coworkers suggested to put in our pre-commit hooks \u0026 you can use the script below.\nmodule_dirs=$(git diff --cached --name-only --diff-filter=d \"*.tf\" \\ \t| xargs -n1 dirname \\ \t| tr '\\n' ' ') [ -n \"${module_dirs}\" ]\\ \t\u0026\u0026 echo \"Auditing outdated module sources\"\\ \t\u0026\u0026 drdrei $module_dirs ","wordCount":"278","inLanguage":"en","datePublished":"2021-08-28T13:41:25-06:00","dateModified":"2021-08-28T13:41:25-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://fmterrorf.github.io/posts/keeping-tf-module-sources-uptodate/"},"publisher":{"@type":"Organization","name":"Daven's blog stuff","logo":{"@type":"ImageObject","url":"https://fmterrorf.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -45,7 +45,7 @@ module &#34;blahblah&#34; { source = &#34;git::https://example.com/monorepo.git?
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href accesskey=h title="Daven's blog stuff (Alt + H)">Daven's blog stuff</a>
+<a href=https://fmterrorf.github.io accesskey=h title="Daven's blog stuff (Alt + H)">Daven's blog stuff</a>
 <span class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
@@ -92,7 +92,7 @@ Keeping Terraform module sources up-to-date
 </article>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href>Daven's blog stuff</a></span>
+<span>&copy; 2021 <a href=https://fmterrorf.github.io>Daven's blog stuff</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
