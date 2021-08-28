@@ -24,7 +24,7 @@ You can run `drdrei path/to/module` and it will tell you to use use `gcs-1.0.3`
 
 ## How it works
 
-Building **drdrei** is pretty simple since all i have to do use existing go libraries & git features. Folks at Terraform are generous enough to make this helper tool called [terraform-config-inspect](https://github.com/hashicorp/terraform-config-inspect) that i used to get high-level metadata such as the `source` attribute) that i used to get high-level metadata such as the `source` attribute from the module. I then used regex to parse out the feature name & semver info from the source.
+Building **drdrei** is pretty simple since all i have to do is use existing go libraries & git features. Folks at Terraform are generous enough to make this helper tool called [terraform-config-inspect](https://github.com/hashicorp/terraform-config-inspect) that i used to get high-level metadata such as the `source` attribute. Then I used regex to parse out the feature name & semver info from the source.
 
 Once i have the sources, i can `git remote-ls` to fetch the list of tags from the source git repo. I then sort the tags using [Masterminds/semver](https://github.com/Masterminds/semver) & only fetch the latest one. Then i compare if my local copy is using the the latest version & show output to the console if it isn't.
 
