@@ -1,0 +1,9 @@
+languageCode: "en-us"
+title: "Daven's blog stuff"
+theme: "PaperMod"
+params:
+    homeInfoParams:
+        Title: "Welcome to my blog"
+        Content: >
+                - Here, I talk random things that i like to do. 
+
