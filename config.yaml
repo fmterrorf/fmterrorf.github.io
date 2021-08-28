@@ -3,6 +3,11 @@ languageCode: "en-us"
 title: "Daven's blog stuff"
 theme: "PaperMod"
 params:
+    socialIcons:
+        - name: github
+          url: "https://github.com/fmterrorf"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/daven-paul-casia/"
     homeInfoParams:
         Title: "Welcome to my blog"
         Content: >
