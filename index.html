@@ -71,7 +71,7 @@
 </header>
 <section class=entry-content>
 <p>Few weeks ago, I decided to write a tool called drdrei that will automatically check if the module’s source attribute isn’t using the latest version. This tool only works if you have a mono repo that uses tag name format such as &lt;feature_name>-&lt;semver> for example:
-gcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in you TF you might have the following:
+gcs-1.0.1 gcs-1.0.2 gcs-1.0.3 And in your TF code you might have the following:
 module "blahblah" { source = "git::https://example.com/monorepo.git?ref=gcs-v1.0.1" } You can run drdrei path/to/module and it will tell you to use use gcs-1....</p>
 </section>
 <footer class=entry-footer>August 28, 2021</footer>
