@@ -1,6 +1,6 @@
 baseURL: "https://fmterrorf.github.io"
 languageCode: "en-us"
-title: "Daven's blog stuff"
+title: "Daven"
 theme: "PaperMod"
 params:
     socialIcons:
@@ -8,8 +8,4 @@ params:
           url: "https://github.com/fmterrorf"
         - name: linkedin
           url: "https://www.linkedin.com/in/daven-paul-casia/"
-    homeInfoParams:
-        Title: "Welcome to my blog"
-        Content: >
-                - I talk about random things that i like to do here 
 
