@@ -4,7 +4,9 @@ title: "Daven"
 theme: "PaperMod"
 params:
     env: production 
-    comments: true
+    ShowReadingTime: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
     socialIcons:
         - name: github
           url: "https://github.com/fmterrorf"
