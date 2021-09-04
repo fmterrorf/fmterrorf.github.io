@@ -8,4 +8,7 @@ params:
           url: "https://github.com/fmterrorf"
         - name: linkedin
           url: "https://www.linkedin.com/in/daven-paul-casia/"
+    homeInfoParams:
+        Content: >
+                - I talk about random things that i like to do here 
 
