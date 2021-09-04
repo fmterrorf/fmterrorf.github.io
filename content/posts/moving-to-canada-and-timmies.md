@@ -9,6 +9,6 @@ It's been quite some time since I moved from the Philippines to a small town in 
 First day on the job & I couldn't understand shit. I messed up a bunch of orders and customers kept on coming back to get their orders fixed. I know I was in trouble. This kept happening for a while until eventually I stopped caring and got good at it. Weirdly enough I picked up phrases and things like:
 * "How is it going?"
 * Talking about the weather all the damn time.
-* The phrase "Welcome to Tim Hortons, how can I help you." was stuck on my head
+* "Welcome to Tim Hortons, how can I help you." got stuck on my head for a long time
 
 People at our local Timmies are very nice, especially the owners. I made lots of connections and met some of my life long friends while working there. I'd be nobody without this experience. Also thank you for turning me into a coffee addict. That's all. This isn't a Timmies ad btw. 
