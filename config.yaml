@@ -4,6 +4,7 @@ title: "Daven"
 theme: "PaperMod"
 params:
     env: production 
+    ShowShareButtons: true
     ShowReadingTime: true
     ShowPostNavLinks: true
     ShowBreadCrumbs: true
