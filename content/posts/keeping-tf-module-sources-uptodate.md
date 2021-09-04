@@ -12,7 +12,7 @@ Few weeks ago, I decided to write a tool called [drdrei](https://github.com/fmte
 	gcs-1.0.3
 ```
 
-And in you TF you might have the following:
+And in your TF code you might have the following:
 
 ```hcl
 module "blahblah" { 
