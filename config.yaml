@@ -3,6 +3,8 @@ languageCode: "en-us"
 title: "Daven"
 theme: "PaperMod"
 params:
+    env: production 
+    comments: true
     socialIcons:
         - name: github
           url: "https://github.com/fmterrorf"
