@@ -1,7 +1,7 @@
 ---
 title: "Leafblower: Cards Against Humanity Clone Using Elixir"
 date: 2021-12-25T17:01:06-06:00
-draft: true
+draft: false
 ---
 
 When the pandemic started me and other friends are looking for a game to play online. One of the games we found was https://pyx-1.pretendyoure.xyz/zy/game.jsp which is a Cards Against Humanity clone written in Java. They did a really good job of implementing features like being able to pick card packs you want & in-game chat feature. The problem is that it's not mobile friendly so you'll have to play it through the desktop view. 
