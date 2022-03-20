@@ -169,7 +169,7 @@ end
 ```
 
 
-Let's start unpacking the important parts. In our `Form` submodule, I used the `embeds_one` funciton to embed the `EmailPreferencesComponent.Form`. 
+Let's start unpacking the important parts. In our `Form` submodule, I used the `embeds_one` function to embed the `EmailPreferencesComponent.Form`. 
 
 
 ```Elixir
@@ -199,7 +199,7 @@ The most important part is this piece of code
 </div>
 ```
 
-We used [inputs_for/2](https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html#inputs_for/2) here to get the form for `:email_preferences`. Since it returns a list, we need to loop using list comprehension, but we're sure that there's always only 1 item in that list since we're using `embeds_one`. 
+We used [inputs_for/2](https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html#inputs_for/2) here to get the form for `:email_preferences`. Since it returns a list, we need to loop using list comprehension. But there's always only 1 item in that list since we're using `embeds_one`. 
 
 
 Now you can use `EmailPreferencesComponent.form_fields/1` anywhere you want as long as you pass the required `form` property
